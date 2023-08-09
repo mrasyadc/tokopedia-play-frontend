@@ -1,20 +1,21 @@
-import { Box, Center, Flex, Square, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
+import Thumbnail from "../../components/Thumbnail";
+
+async function getAllVideosData() {
+  const backend_uri = process.env.BACKEND_URI;
+}
 
 function Home(): JSX.Element {
   return (
-    <>
-      <Flex color="white">
-        <Center w="100px" bg="green.500">
-          <Text>Box 1</Text>
-        </Center>
-        <Square bg="blue.500" size="150px">
-          <Text>Box 2</Text>
-        </Square>
-        <Box flex="1" bg="tomato">
-          <Text>Box 3</Text>
-        </Box>
-      </Flex>
-    </>
+    <SimpleGrid columns={[1, 3, 4]} spacing="40px" margin={[1, 4, 10]}>
+      <Box bg="tomato" height="480px">
+        <Thumbnail videoUrl={"https://a.com"} />
+      </Box>
+      <Box bg="tomato" height="480px"></Box>
+      <Box bg="tomato" height="480px"></Box>
+      <Box bg="tomato" height="480px"></Box>
+      <Box bg="tomato" height="480px"></Box>
+    </SimpleGrid>
   );
 }
 
