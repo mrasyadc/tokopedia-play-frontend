@@ -13,6 +13,7 @@ function getRandomThumbnail() {
   // https://img.youtube.com/vi/<insert-youtube-video-id-here>/1.jpg
   // https://img.youtube.com/vi/<insert-youtube-video-id-here>/2.jpg
   // https://img.youtube.com/vi/<insert-youtube-video-id-here>/3.jpg
+  
 }
 
 export default Thumbnail;
