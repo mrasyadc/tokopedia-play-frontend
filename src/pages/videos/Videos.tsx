@@ -1,6 +1,12 @@
 import { Flex, Center, Square, Box, Text, Container } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 
 function Videos() {
+  type IdParams = {
+    id: string;
+  };
+  const { id } = useParams<IdParams>();
+  console.log(id);
   return (
     <>
       <Flex color="white">
