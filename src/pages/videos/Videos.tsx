@@ -1,4 +1,4 @@
-import { Flex, Center, Square, Box, Text, Container } from "@chakra-ui/react";
+import { Flex, Center, Square, Box, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 function Videos() {

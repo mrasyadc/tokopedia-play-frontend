@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Image, Text } from "@chakra-ui/react";
+import { AspectRatio, Image, Text } from "@chakra-ui/react";
 
 function Thumbnail({ videoUrl, title }: { videoUrl: string; title: string }) {
   return (

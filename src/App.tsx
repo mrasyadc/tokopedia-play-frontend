@@ -4,14 +4,13 @@ import {
   theme,
   Flex,
   Box,
-  Button,
   ButtonGroup,
   Heading,
   Spacer,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Videos from "./pages/videos/Videos";
 import NotFound from "./NotFound";
 
