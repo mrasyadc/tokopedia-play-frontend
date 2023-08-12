@@ -12,7 +12,7 @@ function Thumbnail({ videoUrl, title }: { videoUrl: string; title: string }) {
         />
       </AspectRatio>
 
-      {/* <Text>{title}</Text> */}
+      <Text>{title}</Text>
     </Fragment>
   );
 }
