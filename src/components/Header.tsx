@@ -13,9 +13,9 @@ function Header() {
   return (
     <Flex minWidth="max-content" alignItems="center" gap="2" p="8">
       <Box p="2">
-        <RouterLink to="/">
+        <ChakraLink as={RouterLink} to="/">
           <Heading size="md">Tokopedia Play</Heading>
-        </RouterLink>
+        </ChakraLink>
       </Box>
       <Spacer />
       <ButtonGroup gap="2">

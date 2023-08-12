@@ -1,19 +1,37 @@
-import { AspectRatio, Image, Text } from "@chakra-ui/react";
+import { AspectRatio, Image, Text, Flex } from "@chakra-ui/react";
 import { Fragment } from "react";
 
 function Thumbnail({ videoUrl, title }: { videoUrl: string; title: string }) {
   return (
-    <Fragment>
-      <AspectRatio ratio={9 / 16}>
+    <AspectRatio ratio={9 / 16}>
+      <Flex position="relative">
         <Image
+          border={0}
           borderRadius={10}
           src={getYoutubeThumbnail(videoUrl)}
-          alt={title}
+          alt="Image"
+          objectFit="cover"
+          height={"full"}
         />
-      </AspectRatio>
-
-      <Text>{title}</Text>
-    </Fragment>
+        <Text
+          border={0}
+          borderRadius={10}
+          backgroundImage={
+            "linear-gradient(rgba(25, 27, 28, 0) 0%, rgba(25, 27, 28, 0.8) 100%)"
+          }
+          position="absolute"
+          bottom="0"
+          zIndex="1"
+          width="100%"
+          textAlign="justify"
+          padding={3}
+          color={"white"}
+          fontWeight={"medium"}
+        >
+          {title}
+        </Text>
+      </Flex>
+    </AspectRatio>
   );
 }
 
@@ -24,8 +42,7 @@ function getYoutubeThumbnail(videoUrl: string): string {
 }
 
 function extractVideoId(url: string): string | null {
-  let regExp =
-    /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  let regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
   let match = url.match(regExp);
   if (match && match[2].length === 11) {
     return match[2];

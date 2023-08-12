@@ -1,6 +1,5 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import Thumbnail from "../../components/Thumbnail";
-import Header from "../../components/Header";
 
 async function getAllVideosData() {
   const backend_uri = process.env.BACKEND_URI;

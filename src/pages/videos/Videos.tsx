@@ -1,6 +1,6 @@
 import { Flex, Center, Square, Box, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import Header from "../../components/Header";
+
 function Videos() {
   type IdParams = {
     id: string;
