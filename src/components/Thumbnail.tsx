@@ -1,14 +1,19 @@
 import { AspectRatio, Image, Text } from "@chakra-ui/react";
+import { Fragment } from "react";
 
 function Thumbnail({ videoUrl, title }: { videoUrl: string; title: string }) {
   return (
-    <div>
+    <Fragment>
       <AspectRatio ratio={9 / 16}>
-        <Image src={getYoutubeThumbnail(videoUrl)} alt={title} />
+        <Image
+          borderRadius={10}
+          src={getYoutubeThumbnail(videoUrl)}
+          alt={title}
+        />
       </AspectRatio>
 
-      <Text>{title}</Text>
-    </div>
+      {/* <Text>{title}</Text> */}
+    </Fragment>
   );
 }
 

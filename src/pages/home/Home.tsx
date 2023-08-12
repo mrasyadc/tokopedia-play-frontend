@@ -7,32 +7,32 @@ async function getAllVideosData() {
 
 function Home(): JSX.Element {
   return (
-    <SimpleGrid columns={[1, 3, 3]} spacing="40px" margin={[1, 4, 10]}>
-      <Box bg="tomato">
+    <SimpleGrid columns={[1, 2, 4]} spacing="40px" margin={[8, 4, 10]}>
+      <Box bg="tomato" borderRadius={10}>
         <Thumbnail
           title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
           videoUrl={"https://www.youtube.com/watch?v=txtKTTb3U8g"}
         />
       </Box>
-      <Box bg="tomato">
+      <Box bg="tomato" borderRadius={10}>
         <Thumbnail
           title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
           videoUrl={"https://www.youtube.com/watch?v=JpTqSzm4JOk"}
         />
       </Box>
-      <Box bg="tomato">
+      <Box bg="tomato" borderRadius={10}>
         <Thumbnail
           title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
           videoUrl={"https://www.youtube.com/watch?v=3iM_06QeZi8"}
         />
       </Box>
-      <Box bg="tomato">
+      <Box bg="tomato" borderRadius={10}>
         <Thumbnail
           title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
           videoUrl={"https://www.youtube.com/watch?v=txtKTTb3U8g"}
         />
       </Box>
-      <Box bg="tomato">
+      <Box bg="tomato" borderRadius={10}>
         <Thumbnail
           title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
           videoUrl={"https://www.youtube.com/watch?v=txtKTTb3U8g"}
