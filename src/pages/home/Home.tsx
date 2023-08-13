@@ -1,43 +1,31 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import Thumbnail from "../../components/Thumbnail";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-async function getAllVideosData() {
-  const backend_uri = process.env.BACKEND_URI;
-}
+const BACKEND_URI = process.env.REACT_APP_BACKEND_URI;
 
 function Home(): JSX.Element {
+  const [videos, setVideos]: any = useState([]);
+  useEffect(() => {
+    fetch(`${BACKEND_URI}/api`)
+      .then((results) => results.json())
+      .then((data) => setVideos(data.videos))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <SimpleGrid columns={[1, 2, 4]} spacing="40px" margin={[8, 4, 10]}>
-      <Box bg="tomato" borderRadius={10}>
-        <Thumbnail
-          title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
-          videoUrl={"https://www.youtube.com/watch?v=txtKTTb3U8g"}
-        />
-      </Box>
-      <Box bg="tomato" borderRadius={10}>
-        <Thumbnail
-          title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
-          videoUrl={"https://www.youtube.com/watch?v=JpTqSzm4JOk"}
-        />
-      </Box>
-      <Box bg="tomato" borderRadius={10}>
-        <Thumbnail
-          title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
-          videoUrl={"https://www.youtube.com/watch?v=3iM_06QeZi8"}
-        />
-      </Box>
-      <Box bg="tomato" borderRadius={10}>
-        <Thumbnail
-          title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
-          videoUrl={"https://www.youtube.com/watch?v=txtKTTb3U8g"}
-        />
-      </Box>
-      <Box bg="tomato" borderRadius={10}>
-        <Thumbnail
-          title="contoh title panjang sekali ini adalah title yang panjang sekali ya"
-          videoUrl={"https://www.youtube.com/watch?v=txtKTTb3U8g"}
-        />
-      </Box>
+      {videos.length > 0 &&
+        videos.map((video: any) => {
+          return (
+            <Link key={video._id} to={`video/${video._id}`}>
+              <Box bg="tomato" borderRadius={10}>
+                <Thumbnail title={video.title} videoUrl={video.url} />
+              </Box>
+            </Link>
+          );
+        })}
     </SimpleGrid>
   );
 }

@@ -1,5 +1,4 @@
 import { AspectRatio, Image, Text, Flex } from "@chakra-ui/react";
-import { Fragment } from "react";
 
 function Thumbnail({ videoUrl, title }: { videoUrl: string; title: string }) {
   return (

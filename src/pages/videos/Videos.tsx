@@ -1,5 +1,8 @@
-import { Flex, Center, Square, Box, Text } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { Flex, Center, Square, Box, Text, SimpleGrid } from "@chakra-ui/react";
+import { Link, useParams } from "react-router-dom";
+import ProductLists from "./components/ProductLists";
+import CommentLists from "./components/CommentLists";
+import YoutubeEmbed from "./components/YoutubeEmbed";
 
 function Videos() {
   type IdParams = {
@@ -8,15 +11,15 @@ function Videos() {
   const { id } = useParams<IdParams>();
   console.log(id);
   return (
-    <Flex color="white">
-      <Center w="100px" bg="green.500">
-        <Text>Box 1</Text>
-      </Center>
-      <Square bg="blue.500" size="150px">
-        <Text>Box 2</Text>
-      </Square>
-      <Box flex="1" bg="tomato">
-        <Text>Box 3</Text>
+    <Flex color="white" direction={["column", "column", "row"]} maxH={"90vh"}>
+      <Box flex={[null, null, 1]} bg="blue">
+        <ProductLists videoId={id} />
+      </Box>
+      <Box flex={[null, null, 2]} bg="red">
+        <YoutubeEmbed videoId={id} />
+      </Box>
+      <Box flex={[null, null, 1]} maxH={"full"}>
+        <CommentLists videoId={id} />
       </Box>
     </Flex>
   );
