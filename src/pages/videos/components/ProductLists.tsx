@@ -4,7 +4,7 @@ import {
   AspectRatio,
   CardHeader,
   Heading,
-  SimpleGrid,
+  Flex,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -24,12 +24,13 @@ function ProductLists({ videoId }: { videoId: string }) {
 
   const bg = useColorModeValue("gray.100", "gray.700");
   return (
-    <SimpleGrid
-      columns={1}
-      spacing="40px"
+    <Flex
+      direction={["row", "column", "column"]}
+      gap={5}
+      overflowX={[null, "auto", "auto"]}
       marginX={5}
-      maxH={"80vh"}
-      overflowY="auto"
+      maxH={["full", "full", "80vh"]}
+      overflowY={["auto", null, null]}
     >
       {products.length > 0 &&
         products.map((product: any) => {
@@ -60,7 +61,7 @@ function ProductLists({ videoId }: { videoId: string }) {
             </Link>
           );
         })}
-    </SimpleGrid>
+    </Flex>
   );
 }
 

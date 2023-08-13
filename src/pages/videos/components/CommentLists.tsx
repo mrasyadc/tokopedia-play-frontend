@@ -25,7 +25,12 @@ function CommentLists({ videoId }: { videoId: string }) {
   const bg = useColorModeValue("gray.100", "gray.700");
   return (
     <SimpleGrid columns={1} spacing="40px" marginX={5} marginTop={[5, 5, 0]}>
-      <Card bg={bg} scrollBehavior={"smooth"} maxH={"80vh"} overflowY={"auto"}>
+      <Card
+        bg={bg}
+        scrollBehavior={"smooth"}
+        maxH={["50vh", "full", "80vh"]}
+        overflowY={["scroll", "scroll", "auto"]}
+      >
         <CardBody>
           <Stack divider={<StackDivider />} spacing="4">
             {comments.length > 0 &&

@@ -12,7 +12,7 @@ function Videos() {
   const { id } = useParams<IdParams>();
   console.log(id);
   return (
-    <Flex color="white" direction={["column", "column", "row"]} maxH={"80vh"}>
+    <Flex color="white" direction={["column", "column", "row"]}>
       <Box flex={[null, null, 1]}>
         <ProductLists videoId={id} />
       </Box>
