@@ -1,4 +1,14 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Heading,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,7 +23,13 @@ function ProductLists({ videoId }: { videoId: string }) {
       .catch((err) => console.error(err));
   }, []);
   return (
-    <SimpleGrid columns={1} spacing="40px" margin={[8, 4, 10]}>
+    <SimpleGrid
+      columns={1}
+      spacing="40px"
+      marginX={5}
+      maxH={"80vh"}
+      overflowY="auto"
+    >
       {products.length > 0 &&
         products.map((product: any) => {
           return (
@@ -22,9 +38,128 @@ function ProductLists({ videoId }: { videoId: string }) {
               to={{ pathname: `${product.productURL}` }}
               target="_blank"
             >
-              <Box bg="tomato" borderRadius={10}>
-                {product.title} -- Rp. {product.price}
-              </Box>
+              <Card>
+                <CardHeader>
+                  <Heading size="md">{product.title}</Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>Rp. {product.price}</Text>
+                </CardBody>
+              </Card>
+            </Link>
+          );
+        })}
+      {products.length > 0 &&
+        products.map((product: any) => {
+          return (
+            <Link
+              key={product._id}
+              to={{ pathname: `${product.productURL}` }}
+              target="_blank"
+            >
+              <Card>
+                <CardHeader>
+                  <Heading size="md">{product.title}</Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>Rp. {product.price}</Text>
+                </CardBody>
+              </Card>
+            </Link>
+          );
+        })}
+      {products.length > 0 &&
+        products.map((product: any) => {
+          return (
+            <Link
+              key={product._id}
+              to={{ pathname: `${product.productURL}` }}
+              target="_blank"
+            >
+              <Card>
+                <CardHeader>
+                  <Heading size="md">{product.title}</Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>Rp. {product.price}</Text>
+                </CardBody>
+              </Card>
+            </Link>
+          );
+        })}
+      {products.length > 0 &&
+        products.map((product: any) => {
+          return (
+            <Link
+              key={product._id}
+              to={{ pathname: `${product.productURL}` }}
+              target="_blank"
+            >
+              <Card>
+                <CardHeader>
+                  <Heading size="md">{product.title}</Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>Rp. {product.price}</Text>
+                </CardBody>
+              </Card>
+            </Link>
+          );
+        })}
+      {products.length > 0 &&
+        products.map((product: any) => {
+          return (
+            <Link
+              key={product._id}
+              to={{ pathname: `${product.productURL}` }}
+              target="_blank"
+            >
+              <Card>
+                <CardHeader>
+                  <Heading size="md">{product.title}</Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>Rp. {product.price}</Text>
+                </CardBody>
+              </Card>
+            </Link>
+          );
+        })}
+      {products.length > 0 &&
+        products.map((product: any) => {
+          return (
+            <Link
+              key={product._id}
+              to={{ pathname: `${product.productURL}` }}
+              target="_blank"
+            >
+              <Card>
+                <CardHeader>
+                  <Heading size="md">{product.title}</Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>Rp. {product.price}</Text>
+                </CardBody>
+              </Card>
+            </Link>
+          );
+        })}
+      {products.length > 0 &&
+        products.map((product: any) => {
+          return (
+            <Link
+              key={product._id}
+              to={{ pathname: `${product.productURL}` }}
+              target="_blank"
+            >
+              <Card>
+                <CardHeader>
+                  <Heading size="md">{product.title}</Heading>
+                </CardHeader>
+                <CardBody>
+                  <Text>Rp. {product.price}</Text>
+                </CardBody>
+              </Card>
             </Link>
           );
         })}

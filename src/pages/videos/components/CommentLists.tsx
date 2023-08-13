@@ -4,7 +4,6 @@ import {
   SimpleGrid,
   Text,
   Card,
-  CardHeader,
   CardBody,
   Stack,
   StackDivider,
@@ -27,7 +26,7 @@ function CommentLists({ videoId }: { videoId: string }) {
       <Card
         shadow={"dark-lg"}
         scrollBehavior={"smooth"}
-        maxH={"90vh"}
+        maxH={"80vh"}
         overflowY={"auto"}
       >
         <CardBody>
@@ -38,6 +37,9 @@ function CommentLists({ videoId }: { videoId: string }) {
                   <>
                     <Box>
                       <Heading size="xs">{comment.username}</Heading>
+                      <Text fontSize="xs" fontWeight={"thin"}>
+                        {new Date(comment.createdAt).toLocaleString("id")}
+                      </Text>
                       <Text pt="2" fontSize="sm">
                         {comment.comment}
                       </Text>
@@ -51,6 +53,25 @@ function CommentLists({ videoId }: { videoId: string }) {
                   <>
                     <Box>
                       <Heading size="xs">{comment.username}</Heading>
+                      <Text fontSize="xs" fontWeight={"thin"}>
+                        {new Date(comment.createdAt).toLocaleString("id")}
+                      </Text>
+                      <Text pt="2" fontSize="sm">
+                        {comment.comment}
+                      </Text>
+                    </Box>
+                  </>
+                );
+              })}
+            {comments.length > 0 &&
+              comments.map((comment: any) => {
+                return (
+                  <>
+                    <Box>
+                      <Heading size="xs">{comment.username}</Heading>
+                      <Text fontSize="xs" fontWeight={"thin"}>
+                        {new Date(comment.createdAt).toLocaleString("id")}
+                      </Text>
                       <Text pt="2" fontSize="sm">
                         {comment.comment}
                       </Text>

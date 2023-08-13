@@ -11,11 +11,11 @@ function Videos() {
   const { id } = useParams<IdParams>();
   console.log(id);
   return (
-    <Flex color="white" direction={["column", "column", "row"]} maxH={"90vh"}>
-      <Box flex={[null, null, 1]} bg="blue">
+    <Flex color="white" direction={["column", "column", "row"]} maxH={"80vh"}>
+      <Box flex={[null, null, 1]}>
         <ProductLists videoId={id} />
       </Box>
-      <Box flex={[null, null, 2]} bg="red">
+      <Box flex={[null, null, 2]}>
         <YoutubeEmbed videoId={id} />
       </Box>
       <Box flex={[null, null, 1]} maxH={"full"}>
