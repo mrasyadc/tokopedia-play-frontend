@@ -7,9 +7,9 @@ import {
   CardBody,
   Stack,
   StackDivider,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 const BACKEND_URI = process.env.REACT_APP_BACKEND_URI;
 
@@ -21,14 +21,11 @@ function CommentLists({ videoId }: { videoId: string }) {
       .then((data) => setComments(data.comments))
       .catch((err) => console.error(err));
   }, []);
+
+  const bg = useColorModeValue("gray.100", "gray.700");
   return (
     <SimpleGrid columns={1} spacing="40px" marginX={5} marginTop={[5, 5, 0]}>
-      <Card
-        shadow={"dark-lg"}
-        scrollBehavior={"smooth"}
-        maxH={"80vh"}
-        overflowY={"auto"}
-      >
+      <Card bg={bg} scrollBehavior={"smooth"} maxH={"80vh"} overflowY={"auto"}>
         <CardBody>
           <Stack divider={<StackDivider />} spacing="4">
             {comments.length > 0 &&
@@ -40,39 +37,7 @@ function CommentLists({ videoId }: { videoId: string }) {
                       <Text fontSize="xs" fontWeight={"thin"}>
                         {new Date(comment.createdAt).toLocaleString("id")}
                       </Text>
-                      <Text pt="2" fontSize="sm">
-                        {comment.comment}
-                      </Text>
-                    </Box>
-                  </>
-                );
-              })}
-            {comments.length > 0 &&
-              comments.map((comment: any) => {
-                return (
-                  <>
-                    <Box>
-                      <Heading size="xs">{comment.username}</Heading>
-                      <Text fontSize="xs" fontWeight={"thin"}>
-                        {new Date(comment.createdAt).toLocaleString("id")}
-                      </Text>
-                      <Text pt="2" fontSize="sm">
-                        {comment.comment}
-                      </Text>
-                    </Box>
-                  </>
-                );
-              })}
-            {comments.length > 0 &&
-              comments.map((comment: any) => {
-                return (
-                  <>
-                    <Box>
-                      <Heading size="xs">{comment.username}</Heading>
-                      <Text fontSize="xs" fontWeight={"thin"}>
-                        {new Date(comment.createdAt).toLocaleString("id")}
-                      </Text>
-                      <Text pt="2" fontSize="sm">
+                      <Text pt="2" fontSize="sm" textAlign="justify">
                         {comment.comment}
                       </Text>
                     </Box>

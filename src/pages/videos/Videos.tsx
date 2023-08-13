@@ -1,8 +1,9 @@
-import { Flex, Center, Square, Box, Text, SimpleGrid } from "@chakra-ui/react";
-import { Link, useParams } from "react-router-dom";
+import { Flex, Box } from "@chakra-ui/react";
+
 import ProductLists from "./components/ProductLists";
 import CommentLists from "./components/CommentLists";
 import YoutubeEmbed from "./components/YoutubeEmbed";
+import { useParams } from "react-router-dom";
 
 function Videos() {
   type IdParams = {
