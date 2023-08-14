@@ -1,4 +1,5 @@
 # tokopedia-play-frontend
+Final Project of Generasi GIGIH 3.0 by GoTo Impact by Muhammad Rasyad Caesarardhi (GG3FSGP0448)
 
 - Frontend
 
@@ -102,16 +103,18 @@ small and middle deployments, and you shouldn’t feel obligated to use this
 feature. However we understand that this tool wouldn’t be useful if you couldn’t
 customize it when you are ready for it.
 
+# Database Structure
+Database are divided into 3 collections (Comment, Product, and Video)
 
-## Contributing
+<img width="422" alt="image" src="https://github.com/mrasyadc/final-tokopedia-play-backend/assets/56964497/7893e3db-abae-4074-9efa-8191b072d9f3">
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+- 1 video have many comments but not included in the document inside the video document but are separated. 1 comment are responsible for 1 comment inside a video. a comment is linked to a video.
+- 1 video document can have many products. a document in video collection have array of product object ID linked to the product.
 
-Please make sure to update tests as appropriate.
+<img width="902" alt="image" src="https://github.com/mrasyadc/tokopedia-play-backend/assets/56964497/42465368-c220-4c5e-aa20-f079e6901a48">
 
-## License
+<img width="902" alt="image" src="https://github.com/mrasyadc/tokopedia-play-backend/assets/56964497/98852729-bf4c-4880-aa47-78ab5bf5e4ba">
 
-[MIT](https://choosealicense.com/licenses/mit/)
+<img width="902" alt="image" src="https://github.com/mrasyadc/tokopedia-play-backend/assets/56964497/27448864-a882-46fb-a0bd-6d0c265a373f">
 
 
