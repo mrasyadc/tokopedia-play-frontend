@@ -1,8 +1,16 @@
 # tokopedia-play-frontend
 
-The live apps are available here on [tokopedia-play-frontend](https://tokopedia-play-ten.vercel.app) or [https://tokopedia-play-ten.vercel.app](https://tokopedia-play-ten.vercel.app). Repository for front-end available here on [tokopedia-play-frontend repo](https://github.com/mrasyadc/tokopedia-play-frontend)
+- Frontend
 
-Backend Server are available here on [tokopedia-play-backend](final-tokopedia-play-backend-production.up.railway.app) or [final-tokopedia-play-backend-production.up.railway.app](final-tokopedia-play-backend-production.up.railway.app). Repository for back-end system available here on [final-tokopedia-play-backend repo](https://github.com/mrasyadc/final-tokopedia-play-backend)
+The live apps are available here on [tokopedia-play-frontend](https://tokopedia-play-ten.vercel.app) or [https://tokopedia-play-ten.vercel.app](https://tokopedia-play-ten.vercel.app). 
+
+Repository for front-end available here on [tokopedia-play-frontend repo](https://github.com/mrasyadc/tokopedia-play-frontend)
+
+- Backend
+  
+Backend Server are available here on [tokopedia-play-backend](https://final-tokopedia-play-backend-production.up.railway.app/api) or [https://final-tokopedia-play-backend-production.up.railway.app](https://final-tokopedia-play-backend-production.up.railway.app/api). 
+
+Repository for back-end system available here on [final-tokopedia-play-backend repo](https://github.com/mrasyadc/final-tokopedia-play-backend)
 
 ## What is Tokopedia Play?
 
