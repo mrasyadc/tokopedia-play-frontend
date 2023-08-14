@@ -9,7 +9,8 @@ import {
   StackDivider,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
+import CommentForm from "./CommentForm";
 
 const BACKEND_URI = process.env.REACT_APP_BACKEND_URI;
 
@@ -20,15 +21,15 @@ function CommentLists({ videoId }: { videoId: string }) {
       .then((results) => results.json())
       .then((data) => setComments(data.comments))
       .catch((err) => console.error(err));
-  }, []);
+  }, [comments]);
 
   const bg = useColorModeValue("gray.100", "gray.700");
   return (
-    <SimpleGrid columns={1} spacing="40px" marginX={5} marginTop={[5, 5, 0]}>
+    <SimpleGrid columns={1} spacing="10px" marginX={5} marginTop={[5, 5, 0]}>
       <Card
         bg={bg}
         scrollBehavior={"smooth"}
-        maxH={["50vh", "full", "80vh"]}
+        maxH={["50dvh", "full", "50dvh"]}
         overflowY={["scroll", "scroll", "auto"]}
       >
         <CardBody>
@@ -36,7 +37,7 @@ function CommentLists({ videoId }: { videoId: string }) {
             {comments.length > 0 &&
               comments.map((comment: any) => {
                 return (
-                  <>
+                  <Fragment key={comment._id}>
                     <Box>
                       <Heading size="xs">{comment.username}</Heading>
                       <Text fontSize="xs" fontWeight={"thin"}>
@@ -46,9 +47,25 @@ function CommentLists({ videoId }: { videoId: string }) {
                         {comment.comment}
                       </Text>
                     </Box>
-                  </>
+                  </Fragment>
                 );
               })}
+          </Stack>
+        </CardBody>
+      </Card>
+      <Card
+        bg={bg}
+        scrollBehavior={"smooth"}
+        maxH={["40dvh", "full", "40dvh"]}
+        overflowY={["scroll", "scroll", "auto"]}
+      >
+        <CardBody>
+          <Stack divider={<StackDivider />} spacing="4">
+            <CommentForm
+              comments={comments}
+              setComments={setComments}
+              videoId={videoId}
+            />
           </Stack>
         </CardBody>
       </Card>
