@@ -34,6 +34,11 @@ function CommentLists({ videoId }: { videoId: string }) {
       >
         <CardBody>
           <Stack divider={<StackDivider />} spacing="4">
+            {comments.length === 0 && (
+              <Box>
+                <Heading size="xs">no comments yet!</Heading>
+              </Box>
+            )}
             {comments.length > 0 &&
               comments.map((comment: any) => {
                 return (
